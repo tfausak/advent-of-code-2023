@@ -1,0 +1,59 @@
+cabal-version: 3.8
+
+name: aoc
+version: 2023.12.1.1
+
+common library
+  build-depends: base ^>= 4.19.0.0
+  default-language: Haskell2010
+  ghc-options:
+    -Weverything
+    -Wno-all-missed-specialisations
+    -Wno-implicit-prelude
+    -Wno-missed-specialisations
+    -Wno-missing-deriving-strategies
+    -Wno-missing-export-lists
+    -Wno-missing-kind-signatures
+    -Wno-missing-role-annotations
+    -Wno-missing-safe-haskell-mode
+    -Wno-prepositive-qualified-module
+    -Wno-safe
+
+common executable
+  import: library
+
+  build-depends: aoc
+  ghc-options:
+    -rtsopts
+    -threaded
+
+library
+  import: library
+
+  autogen-modules: PackageInfo_aoc
+  build-depends:
+    , containers ^>= 0.6.8
+    , exceptions ^>= 0.10.7
+    , text ^>= 2.1
+  exposed-modules:
+    AOC
+    AOC.D1.P1
+    AOC.Exception.InvalidDay
+    AOC.Exception.InvalidOption
+    AOC.Exception.InvalidPart
+    AOC.Exception.NotImplemented
+    AOC.Exception.ReadError
+    AOC.Exception.UnexpectedArgument
+    AOC.Exception.UnknownOption
+    AOC.Type.Config
+    AOC.Type.Day
+    AOC.Type.Flag
+    AOC.Type.Part
+  hs-source-dirs: source/library
+  other-modules: PackageInfo_aoc
+
+executable aoc
+  import: executable
+
+  hs-source-dirs: source/executable
+  main-is: Main.hs
