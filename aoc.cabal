@@ -1,7 +1,7 @@
 cabal-version: 3.8
 
 name: aoc
-version: 2023.12.1.2
+version: 2023.12.2.1
 
 common library
   build-depends: base ^>= 4.19.0.0
@@ -34,11 +34,13 @@ library
   build-depends:
     , containers ^>= 0.6.8
     , exceptions ^>= 0.10.7
+    , parsec ^>= 3.1.17.0
     , text ^>= 2.1
   exposed-modules:
     AOC
     AOC.D1.P1
     AOC.D1.P2
+    AOC.D2.P1
     AOC.Exception.InvalidDay
     AOC.Exception.InvalidOption
     AOC.Exception.InvalidPart
