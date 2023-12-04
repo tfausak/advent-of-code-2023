@@ -3,6 +3,7 @@ module AOC where
 import qualified AOC.D1.P1
 import qualified AOC.D1.P2
 import qualified AOC.D2.P1
+import qualified AOC.D2.P2
 import qualified AOC.Exception.InvalidOption as InvalidOption
 import qualified AOC.Exception.NotImplemented as NotImplemented
 import qualified AOC.Exception.UnexpectedArgument as UnexpectedArgument
@@ -60,4 +61,5 @@ makeSolutionsMap = Map.fromList <$> mapM
   [ (1, 1, AOC.D1.P1.run)
   , (1, 2, AOC.D1.P2.run)
   , (2, 1, AOC.D2.P1.run)
+  , (2, 2, AOC.D2.P2.run)
   ]
