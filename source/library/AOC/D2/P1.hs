@@ -65,7 +65,7 @@ data Color
   = Red
   | Green
   | Blue
-  deriving (Eq, Show)
+  deriving (Eq, Ord, Show)
 
 colorP :: Parsec.Stream s m Char => Parsec.ParsecT s u m Color
 colorP = Applicative.asum
